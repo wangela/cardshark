@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class WalletViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
