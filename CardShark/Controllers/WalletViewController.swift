@@ -30,7 +30,8 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WalletCell", for: indexPath) as! WalletTableViewCell
-        cell.cardLabel.text = "row \(indexPath.row)"
+        cell.cardLabel.text = "Chase Sapphire Reserve, row \(indexPath.row)"
+        cell.cardImageView.image = #imageLiteral(resourceName: "sapphire")
         return cell
     }
     
