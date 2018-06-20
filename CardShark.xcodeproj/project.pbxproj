@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		77ABABFF20D9C0B400BF812A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABABFE20D9C0B400BF812A /* AppDelegate.swift */; };
-		77ABAC0120D9C0B400BF812A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABAC0020D9C0B400BF812A /* ViewController.swift */; };
 		77ABAC0420D9C0B400BF812A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ABAC0220D9C0B400BF812A /* Main.storyboard */; };
 		77ABAC0620D9C0B400BF812A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77ABAC0520D9C0B400BF812A /* Assets.xcassets */; };
 		77ABAC0920D9C0B400BF812A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ABAC0720D9C0B400BF812A /* LaunchScreen.storyboard */; };
+		77ABAC1420D9C26E00BF812A /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABAC1320D9C26E00BF812A /* WalletViewController.swift */; };
+		77ABAC1620D9C59400BF812A /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABAC1520D9C59400BF812A /* WalletTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		77ABABFB20D9C0B400BF812A /* CardShark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardShark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77ABABFE20D9C0B400BF812A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77ABAC0020D9C0B400BF812A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77ABAC0320D9C0B400BF812A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77ABAC0520D9C0B400BF812A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77ABAC0820D9C0B400BF812A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77ABAC0A20D9C0B400BF812A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77ABAC1320D9C26E00BF812A /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		77ABAC1520D9C59400BF812A /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,39 @@
 		77ABABFD20D9C0B400BF812A /* CardShark */ = {
 			isa = PBXGroup;
 			children = (
+				77ABAC1020D9C12400BF812A /* Models */,
+				77ABAC1120D9C12F00BF812A /* Views */,
+				77ABAC1220D9C13800BF812A /* Controllers */,
 				77ABABFE20D9C0B400BF812A /* AppDelegate.swift */,
-				77ABAC0020D9C0B400BF812A /* ViewController.swift */,
 				77ABAC0220D9C0B400BF812A /* Main.storyboard */,
 				77ABAC0520D9C0B400BF812A /* Assets.xcassets */,
 				77ABAC0720D9C0B400BF812A /* LaunchScreen.storyboard */,
 				77ABAC0A20D9C0B400BF812A /* Info.plist */,
 			);
 			path = CardShark;
+			sourceTree = "<group>";
+		};
+		77ABAC1020D9C12400BF812A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		77ABAC1120D9C12F00BF812A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77ABAC1520D9C59400BF812A /* WalletTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		77ABAC1220D9C13800BF812A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				77ABAC1320D9C26E00BF812A /* WalletViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77ABAC0120D9C0B400BF812A /* ViewController.swift in Sources */,
+				77ABAC1620D9C59400BF812A /* WalletTableViewCell.swift in Sources */,
 				77ABABFF20D9C0B400BF812A /* AppDelegate.swift in Sources */,
+				77ABAC1420D9C26E00BF812A /* WalletViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

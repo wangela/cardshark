@@ -1,25 +1,94 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Wallet View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="01J-lp-oVM" customClass="WalletViewController" customModule="CardShark" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7f-vN-kGX">
+                                <rect key="frame" x="12" y="12" width="351" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSD-U8-Rhb">
+                                <rect key="frame" x="0.0" y="45.5" width="375" height="621.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletCell" rowHeight="131" id="7m0-4W-klr" customClass="WalletTableViewCell" customModule="CardShark" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="131"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7m0-4W-klr" id="WYG-Bs-htu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eMU-AH-9DE">
+                                                    <rect key="frame" x="8" y="8" width="158" height="100.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="FTM-gE-BQW"/>
+                                                        <constraint firstAttribute="width" constant="158" id="GIJ-T5-caM"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWI-Si-jYZ">
+                                                    <rect key="frame" x="174" y="48" width="178" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eMU-AH-9DE" firstAttribute="centerY" secondItem="WYG-Bs-htu" secondAttribute="centerY" id="0Td-sr-sGI"/>
+                                                <constraint firstItem="eMU-AH-9DE" firstAttribute="top" secondItem="WYG-Bs-htu" secondAttribute="top" constant="8" id="DDn-YF-j6A"/>
+                                                <constraint firstItem="wWI-Si-jYZ" firstAttribute="leading" secondItem="eMU-AH-9DE" secondAttribute="trailing" constant="8" id="Qz1-36-LMi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wWI-Si-jYZ" secondAttribute="trailing" constant="8" id="Ucj-BQ-M9p"/>
+                                                <constraint firstItem="wWI-Si-jYZ" firstAttribute="centerY" secondItem="eMU-AH-9DE" secondAttribute="centerY" id="cVN-af-fck"/>
+                                                <constraint firstAttribute="bottom" secondItem="eMU-AH-9DE" secondAttribute="bottom" constant="8" id="eRj-z3-QM2"/>
+                                                <constraint firstItem="eMU-AH-9DE" firstAttribute="leading" secondItem="WYG-Bs-htu" secondAttribute="leading" constant="8" id="l9b-zv-wy6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CardImageView" destination="eMU-AH-9DE" id="Gcl-zK-QdA"/>
+                                            <outlet property="CardLabel" destination="wWI-Si-jYZ" id="wXn-FY-kkt"/>
+                                            <outlet property="cardImageView" destination="eMU-AH-9DE" id="Izd-HB-VCQ"/>
+                                            <outlet property="cardLabel" destination="wWI-Si-jYZ" id="6aF-0f-TsT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cSD-U8-Rhb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5X0-rz-7bZ"/>
+                            <constraint firstItem="cSD-U8-Rhb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="85i-3M-VaZ"/>
+                            <constraint firstItem="y7f-vN-kGX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-12" id="KLo-0p-Ies"/>
+                            <constraint firstItem="cSD-U8-Rhb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RTC-WK-cAo"/>
+                            <constraint firstItem="y7f-vN-kGX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="lB5-76-5cM"/>
+                            <constraint firstItem="cSD-U8-Rhb" firstAttribute="top" secondItem="y7f-vN-kGX" secondAttribute="bottom" constant="12" id="vls-eA-Ywc"/>
+                            <constraint firstItem="y7f-vN-kGX" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="12" id="zQV-ih-DGE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="walletTable" destination="cSD-U8-Rhb" id="aoA-ey-bya"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
 </document>
