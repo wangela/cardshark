@@ -1,5 +1,5 @@
 //
-//  WalletTableViewCell.swift
+//  CardTableViewCell.swift
 //  CardShark
 //
 //  Created by Angela Yu on 6/19/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WalletTableViewCell: UITableViewCell {
+class CardTableViewCell: UITableViewCell {
 
     @IBOutlet var cardImageView: UIImageView!
     @IBOutlet var cardLabel: UILabel!
@@ -16,6 +16,7 @@ class WalletTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cardImageView.image = #imageLiteral(resourceName: "sapphire")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

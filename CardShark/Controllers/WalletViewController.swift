@@ -12,12 +12,15 @@ import AFNetworking
 class WalletViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var walletTable: UITableView!
+    var numCards = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         walletTable.dataSource = self
         walletTable.delegate = self
+        walletTable.rowHeight = UITableViewAutomaticDimension
+        walletTable.estimatedRowHeight = 124
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,14 +29,19 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        numCards = 5 // populate this with API call of user's cards
+        return numCards + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WalletCell", for: indexPath) as! WalletTableViewCell
-        cell.cardLabel.text = "Chase Sapphire Reserve, row \(indexPath.row)"
-        cell.cardImageView.image = #imageLiteral(resourceName: "sapphire")
-        return cell
+        if (indexPath.row < numCards) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! CardTableViewCell
+            cell.cardLabel.text = "Chase Sapphire Reserve, row \(indexPath.row)"
+            cell.cardImageView.image = #imageLiteral(resourceName: "sapphire")
+            return cell
+        } else {
+            return tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath)
+        }
     }
     
 
