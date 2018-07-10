@@ -7,16 +7,30 @@
 //
 
 import UIKit
+import AFNetworking
 
 class CardTableViewCell: UITableViewCell {
 
     @IBOutlet var cardImageView: UIImageView!
     @IBOutlet var cardLabel: UILabel!
     
+    var card: Card! {
+        didSet {
+            if let name = card.name {
+                cardLabel.text = name
+            }
+            if let imageURL = card.imageURL {
+                // TODO: Hook up to backend to source card images
+                cardImageView.setImageWith(imageURL)
+            } else {
+                cardImageView.image = #imageLiteral(resourceName: "sapphire")
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        cardImageView.image = #imageLiteral(resourceName: "sapphire")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

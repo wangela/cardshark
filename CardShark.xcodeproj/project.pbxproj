@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09957998FD4A6F17656F73A9 /* Pods_CardShark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2D74DF806BF93FCF2EF75B /* Pods_CardShark.framework */; };
+		77672DF420F570D800BF642D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77672DF320F570D800BF642D /* Card.swift */; };
 		779C300B20DB29DA00DD3D89 /* CardSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C300A20DB29DA00DD3D89 /* CardSnapViewController.swift */; };
 		779C300D20DB543700DD3D89 /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C300C20DB543700DD3D89 /* CardSearchViewController.swift */; };
 		77A98A5420DA4C830038FF49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77A98A5320DA4C830038FF49 /* GoogleService-Info.plist */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77672DF320F570D800BF642D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		779C300A20DB29DA00DD3D89 /* CardSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSnapViewController.swift; sourceTree = "<group>"; };
 		779C300C20DB543700DD3D89 /* CardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
 		77A98A5320DA4C830038FF49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "CardShark/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -93,6 +95,7 @@
 		77ABAC1020D9C12400BF812A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				77672DF320F570D800BF642D /* Card.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77ABAC1620D9C59400BF812A /* CardTableViewCell.swift in Sources */,
+				77672DF420F570D800BF642D /* Card.swift in Sources */,
 				77ABABFF20D9C0B400BF812A /* AppDelegate.swift in Sources */,
 				779C300B20DB29DA00DD3D89 /* CardSnapViewController.swift in Sources */,
 				77ABAC1420D9C26E00BF812A /* WalletViewController.swift in Sources */,
