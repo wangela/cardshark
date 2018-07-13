@@ -10,11 +10,11 @@ import UIKit
 
 class CardSearchViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
-    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var resultsTableView: UITableView!
+    let searchController = UISearchController(searchResultsController: nil)
     let sectionTitles = ["Matching Cards", "Popular Cards"]
-    var popCards: [Card?] = []
-    var resultCards: [Card?] = []
+    var popCards: [Card?] = [Card]()
+    var resultCards: [Card?] = [Card]()
     var numPopular = 0
     var numSuggested = 0
     
@@ -26,11 +26,18 @@ class CardSearchViewController: UIViewController, UITableViewDataSource,UITableV
         resultsTableView.rowHeight = UITableViewAutomaticDimension
         resultsTableView.estimatedRowHeight = 124
         
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Type a credit card name"
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        
         popCards = fetchPopularCards()
         numPopular = popCards.count
-        
-        resultCards = fetchResultCards()
-        numSuggested = resultCards.count
+        resultsTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,81 +45,71 @@ class CardSearchViewController: UIViewController, UITableViewDataSource,UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Cards fetching
-    func fetchResultCards() -> [Card] {
-        let card1dict: NSDictionary = [
-            "id": 1,
-            "name": "Chase Emerald Reserve",
-            "network": "Visa",
-            "issuer": "Chase",
-            "descriptionText": "An sparkling card with cash back."
-        ]
-        let card2dict: NSDictionary = [
-            "id": 2,
-            "name": "Explore",
-            "network": "Discover",
-            "issuer": "Explore",
-            "descriptionText": "Great for free rolls at Cinnabon."
-        ]
-        
-        let card1 = Card(dictionary: card1dict)
-        let card2 = Card(dictionary: card2dict)
-        
-        let cards = [card1, card2]
-        
-        return cards
-    }
-    
+    // MARK: - Cards fetching
     func fetchPopularCards() -> [Card] {
-        let card3dict: NSDictionary = [
-            "id": 3,
-            "name": "Chase Sapphire Reserve",
-            "network": "Visa",
-            "issuer": "Chase",
-            "descriptionText": "An indestructible card with Ultimate Rewards for ultimate flexibility."
-        ]
-        let card4dict: NSDictionary = [
-            "id": 4,
-            "name": "Discover",
-            "network": "Discover",
-            "issuer": "Discover",
-            "descriptionText": "Great for free pretzels at Auntie Anne's."
-        ]
-        
-        let card3 = Card(dictionary: card3dict)
-        let card4 = Card(dictionary: card4dict)
-        
-        let cards = [card3, card4]
+        let cards = Client.sharedInstance.getPopularCards()
         
         return cards
     }
     
-    // MARK: TableView setup
+    // MARK: - SearchController setup
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func isSearching() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    // MARK: - TableView setup
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionTitles.count
+        if isSearching() {
+            return sectionTitles.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+        if isSearching() {
+            return sectionTitles[section]
+        } else {
+            return sectionTitles[1]
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return numSuggested
+        if isSearching() {
+            if section == 0 {
+                return numSuggested
+            } else {
+                return numPopular
+            }
         } else {
             return numPopular
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! CardTableViewCell
-            guard let cellCard = resultCards[indexPath.row] else {
-                cell.card = Card(dictionary: [:])
+        if isSearching() {
+            if indexPath.section == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! CardTableViewCell
+                guard let cellCard = resultCards[indexPath.row] else {
+                    cell.card = Card(dictionary: [:])
+                    return cell
+                }
+                cell.card = cellCard
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! CardTableViewCell
+                guard let cellCard = popCards[indexPath.row] else {
+                    cell.card = Card(dictionary: [:])
+                    return cell
+                }
+                cell.card = cellCard
                 return cell
             }
-            cell.card = cellCard
-            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! CardTableViewCell
             guard let cellCard = popCards[indexPath.row] else {
@@ -134,4 +131,22 @@ class CardSearchViewController: UIViewController, UITableViewDataSource,UITableV
     }
     */
 
+}
+
+extension CardSearchViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            if let cards = Client.sharedInstance.search(term: searchText) {
+                self.resultCards = cards
+                self.numSuggested = resultCards.count
+                self.resultsTableView.reloadData()
+            }
+        } else {
+            self.resultCards = []
+            self.numSuggested = resultCards.count
+            self.resultsTableView.reloadData()
+        }
+    }
+    
 }

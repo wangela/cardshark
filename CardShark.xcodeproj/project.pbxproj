@@ -18,6 +18,7 @@
 		77ABAC0920D9C0B400BF812A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ABAC0720D9C0B400BF812A /* LaunchScreen.storyboard */; };
 		77ABAC1420D9C26E00BF812A /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABAC1320D9C26E00BF812A /* WalletViewController.swift */; };
 		77ABAC1620D9C59400BF812A /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABAC1520D9C59400BF812A /* CardTableViewCell.swift */; };
+		77DE259220F68ED100580028 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE259120F68ED100580028 /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		77ABAC0A20D9C0B400BF812A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77ABAC1320D9C26E00BF812A /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		77ABAC1520D9C59400BF812A /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		77DE259120F68ED100580028 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		A9E8FE892F30B97102CB9B8D /* Pods-CardShark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardShark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardShark/Pods-CardShark.debug.xcconfig"; sourceTree = "<group>"; };
 		CB2A2BCB7F9E8CCE0B5EA2E2 /* Pods-CardShark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardShark.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardShark/Pods-CardShark.release.xcconfig"; sourceTree = "<group>"; };
 		CB2D74DF806BF93FCF2EF75B /* Pods_CardShark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardShark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 		77ABABFD20D9C0B400BF812A /* CardShark */ = {
 			isa = PBXGroup;
 			children = (
+				77DE259020F6862B00580028 /* API */,
 				77ABAC1020D9C12400BF812A /* Models */,
 				77ABAC1120D9C12F00BF812A /* Views */,
 				77ABAC1220D9C13800BF812A /* Controllers */,
@@ -116,6 +119,14 @@
 				779C300C20DB543700DD3D89 /* CardSearchViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		77DE259020F6862B00580028 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				77DE259120F68ED100580028 /* Client.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		C1FFD65CB368C5B3ED6C9619 /* Pods */ = {
@@ -262,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77ABAC1620D9C59400BF812A /* CardTableViewCell.swift in Sources */,
+				77DE259220F68ED100580028 /* Client.swift in Sources */,
 				77672DF420F570D800BF642D /* Card.swift in Sources */,
 				77ABABFF20D9C0B400BF812A /* AppDelegate.swift in Sources */,
 				779C300B20DB29DA00DD3D89 /* CardSnapViewController.swift in Sources */,

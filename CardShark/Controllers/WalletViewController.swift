@@ -20,11 +20,13 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         
         walletTable.dataSource = self
         walletTable.delegate = self
-        walletTable.rowHeight = UITableViewAutomaticDimension
-        walletTable.estimatedRowHeight = 124
+        walletTable.estimatedRowHeight = 150
+        // walletTable.rowHeight = UITableViewAutomaticDimension
         
         fetchedCards = fetchCards()
         numCards = fetchedCards.count
+        
+        walletTable.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,25 +36,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     
     // MARK: Fetch Cards
     func fetchCards() -> [Card] {
-        let card1dict: NSDictionary = [
-            "id": 1,
-            "name": "Chase Sapphire Reserve",
-            "network": "Visa",
-            "issuer": "Chase",
-            "descriptionText": "An indestructible card with Ultimate Rewards for ultimate flexibility."
-        ]
-        let card2dict: NSDictionary = [
-            "id": 2,
-            "name": "Discover",
-            "network": "Discover",
-            "issuer": "Discover",
-            "descriptionText": "Great for free pretzels at Auntie Anne's."
-        ]
-        
-        let card1 = Card(dictionary: card1dict)
-        let card2 = Card(dictionary: card2dict)
-        
-        let cards = [card1, card2]
+        let cards = Client.sharedInstance.getWalletCards()
         
         return cards
     }
