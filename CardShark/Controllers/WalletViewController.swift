@@ -23,10 +23,11 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         walletTable.estimatedRowHeight = 150
         // walletTable.rowHeight = UITableViewAutomaticDimension
         
-        fetchedCards = fetchCards()
-        numCards = fetchedCards.count
-        
-        walletTable.reloadData()
+        fetchCards()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchCards()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +36,10 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     // MARK: Fetch Cards
-    func fetchCards() -> [Card] {
-        let cards = Client.sharedInstance.getWalletCards()
-        
-        return cards
+    func fetchCards() -> Void {
+        self.fetchedCards = Client.sharedInstance.getWalletCards()
+        self.numCards = self.fetchedCards.count
+        self.walletTable.reloadData()
     }
     
     // MARK: TableView setup

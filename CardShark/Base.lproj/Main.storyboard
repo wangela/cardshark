@@ -157,6 +157,9 @@
                                 <rect key="frame" x="129.5" y="451.5" width="116" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add to Wallet"/>
+                                <connections>
+                                    <action selector="onAddButton:" destination="4SN-DS-d0x" eventType="touchUpInside" id="mOJ-gc-njt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

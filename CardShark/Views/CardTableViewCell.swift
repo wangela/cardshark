@@ -19,12 +19,16 @@ class CardTableViewCell: UITableViewCell {
             if let name = card.name {
                 cardLabel.text = name
             }
-            if let imageURL = card.imageURL {
-                // TODO: Hook up to backend to source card images
-                cardImageView.setImageWith(imageURL)
-            } else {
-                cardImageView.image = #imageLiteral(resourceName: "sapphire")
+            guard let imageURL = card.imageURL else {
+                guard let cardImage = card.imageAsset else {
+                    cardImageView.image = #imageLiteral(resourceName: "amazon")
+                    return
+                }
+                cardImageView.image = cardImage
+                return
             }
+            // TODO: Hook up to backend to source card images
+            cardImageView.setImageWith(imageURL)
         }
     }
     

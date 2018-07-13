@@ -16,6 +16,7 @@ class Card: NSObject {
     let descriptionText: String?
     let bonuses: [String: [Any]]?
     let imageURL: URL?
+    var imageAsset: UIImage?
     
     init(dictionary: NSDictionary) {
         id = dictionary["id"] as? String
@@ -24,6 +25,7 @@ class Card: NSObject {
         issuer = dictionary["issuer"] as? String
         descriptionText = dictionary["descriptionText"] as? String
         bonuses = dictionary["bonuses"] as? [String: [Any]]
+        imageAsset = nil
         
        if let imageURLString = dictionary["image_url"] as? String {
         imageURL = URL(string: imageURLString)

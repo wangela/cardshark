@@ -22,6 +22,7 @@ class CardDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.]
+        addButton.isHidden = !forAddScreen
         if let name = card.name {
             cardNameLabel.text = name
         } else {
@@ -32,14 +33,16 @@ class CardDetailViewController: UIViewController {
         } else {
             cardDescriptionLabel.text = "Card Description"
         }
-        if let imageURL = card.imageURL {
-            // TODO: Hook up to backend to source card images
-            cardImageView.setImageWith(imageURL)
-        } else {
-            cardImageView.image = #imageLiteral(resourceName: "sapphire")
+        guard let imageURL = card.imageURL else {
+            guard let cardImage = card.imageAsset else {
+                cardImageView.image = #imageLiteral(resourceName: "amazon")
+                return
+            }
+            cardImageView.image = cardImage
+            return
         }
-        
-        addButton.isHidden = !forAddScreen
+        // TODO: Hook up to backend to source card images
+        cardImageView.setImageWith(imageURL)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,5 +60,9 @@ class CardDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func onAddButton(_ sender: Any) {
+        Client.sharedInstance.addCardToWallet(card: self.card)
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
 }
