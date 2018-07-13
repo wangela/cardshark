@@ -19,6 +19,8 @@
 		77ABAC1420D9C26E00BF812A /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABAC1320D9C26E00BF812A /* WalletViewController.swift */; };
 		77ABAC1620D9C59400BF812A /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ABAC1520D9C59400BF812A /* CardTableViewCell.swift */; };
 		77DE259220F68ED100580028 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE259120F68ED100580028 /* Client.swift */; };
+		77F0BACD20F8C0B30001DC57 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0BACC20F8C0B30001DC57 /* ResultCell.swift */; };
+		77F0BACF20F8C4930001DC57 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0BACE20F8C4930001DC57 /* CardDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		77ABAC1320D9C26E00BF812A /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		77ABAC1520D9C59400BF812A /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		77DE259120F68ED100580028 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		77F0BACC20F8C0B30001DC57 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		77F0BACE20F8C4930001DC57 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		A9E8FE892F30B97102CB9B8D /* Pods-CardShark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardShark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardShark/Pods-CardShark.debug.xcconfig"; sourceTree = "<group>"; };
 		CB2A2BCB7F9E8CCE0B5EA2E2 /* Pods-CardShark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardShark.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardShark/Pods-CardShark.release.xcconfig"; sourceTree = "<group>"; };
 		CB2D74DF806BF93FCF2EF75B /* Pods_CardShark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardShark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				77ABAC1520D9C59400BF812A /* CardTableViewCell.swift */,
+				77F0BACC20F8C0B30001DC57 /* ResultCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				77ABAC1320D9C26E00BF812A /* WalletViewController.swift */,
 				779C300A20DB29DA00DD3D89 /* CardSnapViewController.swift */,
 				779C300C20DB543700DD3D89 /* CardSearchViewController.swift */,
+				77F0BACE20F8C4930001DC57 /* CardDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 			files = (
 				77ABAC1620D9C59400BF812A /* CardTableViewCell.swift in Sources */,
 				77DE259220F68ED100580028 /* Client.swift in Sources */,
+				77F0BACD20F8C0B30001DC57 /* ResultCell.swift in Sources */,
 				77672DF420F570D800BF642D /* Card.swift in Sources */,
+				77F0BACF20F8C4930001DC57 /* CardDetailViewController.swift in Sources */,
 				77ABABFF20D9C0B400BF812A /* AppDelegate.swift in Sources */,
 				779C300B20DB29DA00DD3D89 /* CardSnapViewController.swift in Sources */,
 				77ABAC1420D9C26E00BF812A /* WalletViewController.swift in Sources */,

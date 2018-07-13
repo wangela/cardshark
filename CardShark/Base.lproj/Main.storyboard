@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,6 +66,7 @@
                                             <outlet property="CardLabel" destination="zqU-1b-Giq" id="Cs9-dk-7rg"/>
                                             <outlet property="cardImageView" destination="rVn-gN-NK9" id="eQA-1h-xoY"/>
                                             <outlet property="cardLabel" destination="zqU-1b-Giq" id="fhI-iP-xqp"/>
+                                            <segue destination="4SN-DS-d0x" kind="show" identifier="detail" id="TaX-n4-zy4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addCell" rowHeight="130" id="lMs-RN-2iv">
@@ -124,6 +127,63 @@
             </objects>
             <point key="canvasLocation" x="391.19999999999999" y="374.66266866566718"/>
         </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="Zwj-nN-hVb">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="4SN-DS-d0x" customClass="CardDetailViewController" customModule="CardShark" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o6t-bo-McE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uU0-zj-ZvM">
+                                <rect key="frame" x="28" y="132.5" width="319.5" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uU0-zj-ZvM" secondAttribute="height" multiplier="316:200" id="fIn-kr-TDT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chase Sapphire Reserve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd9-Hj-ZHL">
+                                <rect key="frame" x="72.5" y="354.5" width="230" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Detailed Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjE-MU-hy0">
+                                <rect key="frame" x="110" y="390.5" width="155.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FjE-MU-hy0" firstAttribute="centerX" secondItem="o6t-bo-McE" secondAttribute="centerX" id="7Wy-mY-b6b"/>
+                            <constraint firstItem="TZK-Y1-9vU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bd9-Hj-ZHL" secondAttribute="trailing" constant="12" id="FCJ-cR-3zp"/>
+                            <constraint firstItem="TZK-Y1-9vU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FjE-MU-hy0" secondAttribute="bottom" constant="20" id="TQ7-cb-kEL"/>
+                            <constraint firstItem="uU0-zj-ZvM" firstAttribute="width" secondItem="TZK-Y1-9vU" secondAttribute="width" multiplier="0.85" id="U50-B4-1FL"/>
+                            <constraint firstItem="uU0-zj-ZvM" firstAttribute="centerY" secondItem="o6t-bo-McE" secondAttribute="centerY" multiplier="0.7" id="UFK-2X-a5z"/>
+                            <constraint firstItem="TZK-Y1-9vU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FjE-MU-hy0" secondAttribute="trailing" constant="12" id="Wgz-BM-K3m"/>
+                            <constraint firstItem="FjE-MU-hy0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TZK-Y1-9vU" secondAttribute="leading" constant="12" id="YB6-X7-65r"/>
+                            <constraint firstItem="uU0-zj-ZvM" firstAttribute="centerX" secondItem="o6t-bo-McE" secondAttribute="centerX" id="moJ-3g-yku"/>
+                            <constraint firstItem="bd9-Hj-ZHL" firstAttribute="top" secondItem="uU0-zj-ZvM" secondAttribute="bottom" constant="20" id="nPh-EQ-FjX"/>
+                            <constraint firstItem="bd9-Hj-ZHL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TZK-Y1-9vU" secondAttribute="leading" constant="12" id="nea-Op-zBP"/>
+                            <constraint firstItem="FjE-MU-hy0" firstAttribute="top" secondItem="bd9-Hj-ZHL" secondAttribute="bottom" constant="12" id="qOg-oP-ab3"/>
+                            <constraint firstItem="bd9-Hj-ZHL" firstAttribute="centerX" secondItem="o6t-bo-McE" secondAttribute="centerX" id="sD9-hy-L3K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TZK-Y1-9vU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H4x-oT-S34">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="JqW-5b-PjF"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cardDescriptionLabel" destination="FjE-MU-hy0" id="m2W-V5-O29"/>
+                        <outlet property="cardImageView" destination="uU0-zj-ZvM" id="rJp-zP-2pU"/>
+                        <outlet property="cardNameLabel" destination="bd9-Hj-ZHL" id="g08-ww-5m9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQ9-UC-tUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="375"/>
+        </scene>
         <!--Add Card-->
         <scene sceneID="bCS-40-toH">
             <objects>
@@ -139,15 +199,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="404"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePf-3x-L9k">
-                                                <rect key="frame" x="29" y="102" width="316" height="200"/>
+                                                <rect key="frame" x="27.5" y="101" width="319" height="202"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="Sk4-p7-qf1"/>
-                                                    <constraint firstAttribute="width" constant="316" id="hsM-KS-pZZ"/>
+                                                    <constraint firstAttribute="width" secondItem="ePf-3x-L9k" secondAttribute="height" multiplier="316:200" id="kCx-vv-0XS"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position your card in the frame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDQ-jN-7ad">
-                                                <rect key="frame" x="70.5" y="322" width="233.5" height="20.5"/>
+                                                <rect key="frame" x="70.5" y="323" width="233.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -157,6 +216,7 @@
                                         <constraints>
                                             <constraint firstItem="kDQ-jN-7ad" firstAttribute="top" secondItem="ePf-3x-L9k" secondAttribute="bottom" constant="20" id="Mf7-0z-qrz"/>
                                             <constraint firstItem="ePf-3x-L9k" firstAttribute="centerX" secondItem="I1g-EL-Zv0" secondAttribute="centerX" id="YGg-MQ-AKj"/>
+                                            <constraint firstItem="ePf-3x-L9k" firstAttribute="width" secondItem="I1g-EL-Zv0" secondAttribute="width" multiplier="0.85" id="cQu-Lx-TJY"/>
                                             <constraint firstItem="kDQ-jN-7ad" firstAttribute="centerX" secondItem="ePf-3x-L9k" secondAttribute="centerX" id="tr7-Cz-h97"/>
                                             <constraint firstItem="ePf-3x-L9k" firstAttribute="centerY" secondItem="I1g-EL-Zv0" secondAttribute="centerY" id="u5N-f7-X7k"/>
                                         </constraints>
@@ -164,7 +224,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-z6-J9L">
                                         <rect key="frame" x="0.0" y="404" width="375" height="199"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHe-0y-rjk">
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHe-0y-rjk">
                                                 <rect key="frame" x="75" y="84.5" width="225" height="30"/>
                                                 <state key="normal" title="Or, search for your card by name">
                                                     <color key="titleColor" red="0.2279745638" green="0.63336116080000004" blue="0.95047610999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -213,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pht-ig-uHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="1152"/>
+            <point key="canvasLocation" x="1292" y="1152"/>
         </scene>
         <!--Search Card Name-->
         <scene sceneID="cDf-TF-hUh">
@@ -227,8 +287,33 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" id="Hdg-As-HFh" customClass="ResultCell" customModule="CardShark" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hdg-As-HFh" id="hHO-l7-kOj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP1-3a-j2i">
+                                                    <rect key="frame" x="23" y="19" width="86.5" height="6"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lP1-3a-j2i" secondAttribute="bottom" constant="8" id="Ktw-gG-FNQ"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="lP1-3a-j2i" secondAttribute="trailing" constant="12" id="VUn-r8-0iQ"/>
+                                                <constraint firstItem="lP1-3a-j2i" firstAttribute="leading" secondItem="hHO-l7-kOj" secondAttribute="leadingMargin" constant="8" id="qid-w5-b8V"/>
+                                                <constraint firstItem="lP1-3a-j2i" firstAttribute="top" secondItem="hHO-l7-kOj" secondAttribute="topMargin" constant="8" id="vgI-QM-2pF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="lP1-3a-j2i" id="yak-A2-mzt"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="131" id="Edy-iN-F1M" customClass="CardTableViewCell" customModule="CardShark" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="131"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Edy-iN-F1M" id="Uyt-am-mAg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
@@ -283,7 +368,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roA-Ob-Urs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017" y="1152"/>
+            <point key="canvasLocation" x="1193" y="1953"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xRv-Pr-Dh9">
+            <objects>
+                <viewController id="kJA-pk-G82" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N8w-mj-BfG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="ARU-PF-kpH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GmI-H3-WHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2177" y="1152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dlt-ur-Fvi">

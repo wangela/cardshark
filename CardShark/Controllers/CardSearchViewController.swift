@@ -94,7 +94,7 @@ class CardSearchViewController: UIViewController, UITableViewDataSource,UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isSearching() {
             if indexPath.section == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! CardTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
                 guard let cellCard = resultCards[indexPath.row] else {
                     cell.card = Card(dictionary: [:])
                     return cell

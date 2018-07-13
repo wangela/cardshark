@@ -60,7 +60,6 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -70,5 +69,13 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail" {
+            let cell = sender as! CardTableViewCell
+            let card = cell.card
+            
+            let destinationVC = segue.destination as! CardDetailViewController
+            destinationVC.card = card
+        }
+    }
 }
