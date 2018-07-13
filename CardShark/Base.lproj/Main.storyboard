@@ -153,14 +153,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgV-fT-4fT">
+                                <rect key="frame" x="129.5" y="451.5" width="116" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add to Wallet"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FjE-MU-hy0" firstAttribute="centerX" secondItem="o6t-bo-McE" secondAttribute="centerX" id="7Wy-mY-b6b"/>
+                            <constraint firstItem="rgV-fT-4fT" firstAttribute="centerX" secondItem="o6t-bo-McE" secondAttribute="centerX" id="BPe-vV-tEf"/>
                             <constraint firstItem="TZK-Y1-9vU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bd9-Hj-ZHL" secondAttribute="trailing" constant="12" id="FCJ-cR-3zp"/>
+                            <constraint firstItem="rgV-fT-4fT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TZK-Y1-9vU" secondAttribute="leading" constant="12" id="JWZ-I6-9Rk"/>
                             <constraint firstItem="TZK-Y1-9vU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FjE-MU-hy0" secondAttribute="bottom" constant="20" id="TQ7-cb-kEL"/>
                             <constraint firstItem="uU0-zj-ZvM" firstAttribute="width" secondItem="TZK-Y1-9vU" secondAttribute="width" multiplier="0.85" id="U50-B4-1FL"/>
                             <constraint firstItem="uU0-zj-ZvM" firstAttribute="centerY" secondItem="o6t-bo-McE" secondAttribute="centerY" multiplier="0.7" id="UFK-2X-a5z"/>
+                            <constraint firstItem="TZK-Y1-9vU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rgV-fT-4fT" secondAttribute="trailing" constant="12" id="Vhi-XQ-Tmp"/>
                             <constraint firstItem="TZK-Y1-9vU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FjE-MU-hy0" secondAttribute="trailing" constant="12" id="Wgz-BM-K3m"/>
                             <constraint firstItem="FjE-MU-hy0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TZK-Y1-9vU" secondAttribute="leading" constant="12" id="YB6-X7-65r"/>
                             <constraint firstItem="uU0-zj-ZvM" firstAttribute="centerX" secondItem="o6t-bo-McE" secondAttribute="centerX" id="moJ-3g-yku"/>
@@ -168,6 +176,8 @@
                             <constraint firstItem="bd9-Hj-ZHL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TZK-Y1-9vU" secondAttribute="leading" constant="12" id="nea-Op-zBP"/>
                             <constraint firstItem="FjE-MU-hy0" firstAttribute="top" secondItem="bd9-Hj-ZHL" secondAttribute="bottom" constant="12" id="qOg-oP-ab3"/>
                             <constraint firstItem="bd9-Hj-ZHL" firstAttribute="centerX" secondItem="o6t-bo-McE" secondAttribute="centerX" id="sD9-hy-L3K"/>
+                            <constraint firstItem="rgV-fT-4fT" firstAttribute="top" secondItem="FjE-MU-hy0" secondAttribute="bottom" constant="40" id="xf9-cm-FUV"/>
+                            <constraint firstItem="TZK-Y1-9vU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rgV-fT-4fT" secondAttribute="bottom" constant="20" id="ypu-gh-Nf4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TZK-Y1-9vU"/>
                     </view>
@@ -175,6 +185,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="JqW-5b-PjF"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="rgV-fT-4fT" id="793-h3-lf8"/>
                         <outlet property="cardDescriptionLabel" destination="FjE-MU-hy0" id="m2W-V5-O29"/>
                         <outlet property="cardImageView" destination="uU0-zj-ZvM" id="rJp-zP-2pU"/>
                         <outlet property="cardNameLabel" destination="bd9-Hj-ZHL" id="g08-ww-5m9"/>
@@ -182,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQ9-UC-tUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="375"/>
+            <point key="canvasLocation" x="3662" y="375"/>
         </scene>
         <!--Add Card-->
         <scene sceneID="bCS-40-toH">
@@ -225,7 +236,8 @@
                                         <rect key="frame" x="0.0" y="404" width="375" height="199"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHe-0y-rjk">
-                                                <rect key="frame" x="75" y="84.5" width="225" height="30"/>
+                                                <rect key="frame" x="47.5" y="81.5" width="280" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Or, search for your card by name">
                                                     <color key="titleColor" red="0.2279745638" green="0.63336116080000004" blue="0.95047610999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -310,6 +322,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="lP1-3a-j2i" id="yak-A2-mzt"/>
+                                            <segue destination="4SN-DS-d0x" kind="show" identifier="rDetail" id="Qyn-Ip-Acd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="131" id="Edy-iN-F1M" customClass="CardTableViewCell" customModule="CardShark" customModuleProvider="target">
@@ -348,6 +361,7 @@
                                             <outlet property="CardLabel" destination="nAs-BG-lEO" id="NUE-NE-63L"/>
                                             <outlet property="cardImageView" destination="rhR-lM-qrI" id="aWa-DL-G55"/>
                                             <outlet property="cardLabel" destination="nAs-BG-lEO" id="Tm0-9X-cwh"/>
+                                            <segue destination="4SN-DS-d0x" kind="show" identifier="pDetail" id="7KT-sK-btB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -368,22 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roA-Ob-Urs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="1953"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="xRv-Pr-Dh9">
-            <objects>
-                <viewController id="kJA-pk-G82" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N8w-mj-BfG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="ARU-PF-kpH"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GmI-H3-WHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2177" y="1152"/>
+            <point key="canvasLocation" x="2257" y="1152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dlt-ur-Fvi">
@@ -425,4 +424,7 @@
     <resources>
         <image name="add" width="93" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qyn-Ip-Acd"/>
+    </inferredMetricsTieBreakers>
 </document>

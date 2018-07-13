@@ -13,8 +13,10 @@ class CardDetailViewController: UIViewController {
     @IBOutlet var cardImageView: UIImageView!
     @IBOutlet var cardNameLabel: UILabel!
     @IBOutlet var cardDescriptionLabel: UILabel!
+    @IBOutlet var addButton: UIButton!
     
     var card: Card!
+    var forAddScreen: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class CardDetailViewController: UIViewController {
         } else {
             cardImageView.image = #imageLiteral(resourceName: "sapphire")
         }
+        
+        addButton.isHidden = !forAddScreen
     }
 
     override func didReceiveMemoryWarning() {

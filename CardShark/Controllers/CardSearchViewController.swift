@@ -130,6 +130,23 @@ class CardSearchViewController: UIViewController, UITableViewDataSource,UITableV
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pDetail" {
+            let cell = sender as! CardTableViewCell
+            let card = cell.card
+            
+            let destinationVC = segue.destination as! CardDetailViewController
+            destinationVC.card = card
+            destinationVC.forAddScreen = true
+        } else if segue.identifier == "rDetail" {
+            let cell = sender as! ResultCell
+            let card = cell.card
+            
+            let destinationVC = segue.destination as! CardDetailViewController
+            destinationVC.card = card
+            destinationVC.forAddScreen = true
+        }
+    }
 
 }
 
