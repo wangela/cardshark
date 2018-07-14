@@ -38,60 +38,61 @@ let card4dict: NSDictionary = [
 ]
 let card5dict: NSDictionary = [
     "id": 5,
-    "name": "Chase Emerald Reserve",
+    "name": "Wells Fargo Debit",
     "network": "Visa",
-    "issuer": "Chase",
-    "descriptionText": "A sparkling card with cash back."
+    "issuer": "Wells Fargo",
+    "descriptionText": "Is Westworld making us cool again?"
 ]
 let card6dict: NSDictionary = [
     "id": 6,
-    "name": "Explore",
-    "network": "Discover",
-    "issuer": "Explore",
-    "descriptionText": "Great for free rolls at Cinnabon."
+    "name": "Citi Simplicity",
+    "network": "Mastercard",
+    "issuer": "Citibank",
+    "descriptionText": "Simple."
 ]
 
 class Client {
     static let sharedInstance = Client()
     
-    let card1 = Card(dictionary: card1dict)
-    let card2 = Card(dictionary: card2dict)
-    let card3 = Card(dictionary: card3dict)
-    let card4 = Card(dictionary: card4dict)
-    let card5 = Card(dictionary: card5dict)
-    let card6 = Card(dictionary: card6dict)
-    var wallet: [Card]
+    private let card1 = Card(dictionary: card1dict)
+    private let card2 = Card(dictionary: card2dict)
+    private let card3 = Card(dictionary: card3dict)
+    private let card4 = Card(dictionary: card4dict)
+    private let card5 = Card(dictionary: card5dict)
+    private let card6 = Card(dictionary: card6dict)
+    private lazy var wallet: [Card] = []
     
     init() {
-        card1.imageAsset = #imageLiteral(resourceName: "sapphire")
-        card2.imageAsset = #imageLiteral(resourceName: "discover")
-        card3.imageAsset = #imageLiteral(resourceName: "amazon")
-        card4.imageAsset = #imageLiteral(resourceName: "amex")
-        card5.imageAsset = #imageLiteral(resourceName: "sapphire")
-        card6.imageAsset = #imageLiteral(resourceName: "discover")
+        card1.addImage(asset: #imageLiteral(resourceName: "sapphire"))
+        card2.addImage(asset: #imageLiteral(resourceName: "discover"))
+        card3.addImage(asset: #imageLiteral(resourceName: "amazon"))
+        card4.addImage(asset: #imageLiteral(resourceName: "amex"))
+        card5.addImage(asset: #imageLiteral(resourceName: "wellsvisa"))
+        card6.addImage(asset: #imageLiteral(resourceName: "citisimplicity"))
         
         wallet = [card4, card2]
     }
     
     func search(term: String) -> [Card]? {
         let cards = [card5, card6]
+        
         return cards
     }
     
     func getPopularCards() -> [Card] {
-        let cards = [card1, card3, card2]
+        let cards = [card1, card3, card6]
         
         return cards
     }
     
     func getWalletCards() -> [Card] {
         // TODO: Cache wallet in local device?
-        return wallet
+        return self.wallet
     }
     
     func addCardToWallet(card: Card) {
         // TODO: Persist wallet across sessions
-        wallet.append(card)
+        self.wallet.append(card)
     }
 
 }

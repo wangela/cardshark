@@ -16,7 +16,7 @@ class Card: NSObject {
     let descriptionText: String?
     let bonuses: [String: [Any]]?
     let imageURL: URL?
-    var imageAsset: UIImage?
+    private lazy var imageAsset: UIImage? = nil
     
     init(dictionary: NSDictionary) {
         id = dictionary["id"] as? String
@@ -25,13 +25,32 @@ class Card: NSObject {
         issuer = dictionary["issuer"] as? String
         descriptionText = dictionary["descriptionText"] as? String
         bonuses = dictionary["bonuses"] as? [String: [Any]]
-        imageAsset = nil
         
-       if let imageURLString = dictionary["image_url"] as? String {
-        imageURL = URL(string: imageURLString)
-       } else {
-        imageURL = nil
-       }
+        if let imageURLString = dictionary["image_url"] as? String {
+            imageURL = URL(string: imageURLString)
+        } else {
+            imageURL = nil
+        }
+    }
+    
+    func addImage(asset: UIImage?) -> Void {
+        guard let asset = asset else {
+            return
+        }
+        self.imageAsset = asset
+    }
+    
+    func setImage(for imageView: UIImageView) -> Void {
+        guard let imageURL = self.imageURL else {
+            guard let cardImage = self.imageAsset else {
+                imageView.image = #imageLiteral(resourceName: "add")
+                return
+            }
+            imageView.image = cardImage
+            return
+        }
+        // TODO: Hook up to backend to source card images
+        imageView.setImageWith(imageURL)
     }
 
 }

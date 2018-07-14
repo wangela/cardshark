@@ -33,16 +33,7 @@ class CardDetailViewController: UIViewController {
         } else {
             cardDescriptionLabel.text = "Card Description"
         }
-        guard let imageURL = card.imageURL else {
-            guard let cardImage = card.imageAsset else {
-                cardImageView.image = #imageLiteral(resourceName: "amazon")
-                return
-            }
-            cardImageView.image = cardImage
-            return
-        }
-        // TODO: Hook up to backend to source card images
-        cardImageView.setImageWith(imageURL)
+        card.setImage(for: cardImageView)
     }
 
     override func didReceiveMemoryWarning() {
