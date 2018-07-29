@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		09957998FD4A6F17656F73A9 /* Pods_CardShark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2D74DF806BF93FCF2EF75B /* Pods_CardShark.framework */; };
+		775DE2D1210867200044A481 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775DE2D0210867200044A481 /* SettingsViewController.swift */; };
+		775DE2D3210867930044A481 /* MerchantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775DE2D2210867930044A481 /* MerchantsViewController.swift */; };
+		775DE2D5210867E70044A481 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775DE2D4210867E70044A481 /* SuggestionsViewController.swift */; };
+		775DE2D72108714B0044A481 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775DE2D62108714B0044A481 /* TabBarViewController.swift */; };
 		77672DF420F570D800BF642D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77672DF320F570D800BF642D /* Card.swift */; };
 		779C300B20DB29DA00DD3D89 /* CardSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C300A20DB29DA00DD3D89 /* CardSnapViewController.swift */; };
 		779C300D20DB543700DD3D89 /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C300C20DB543700DD3D89 /* CardSearchViewController.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		775DE2D0210867200044A481 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		775DE2D2210867930044A481 /* MerchantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantsViewController.swift; sourceTree = "<group>"; };
+		775DE2D4210867E70044A481 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		775DE2D62108714B0044A481 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		77672DF320F570D800BF642D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		779C300A20DB29DA00DD3D89 /* CardSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSnapViewController.swift; sourceTree = "<group>"; };
 		779C300C20DB543700DD3D89 /* CardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +131,10 @@
 				779C300A20DB29DA00DD3D89 /* CardSnapViewController.swift */,
 				779C300C20DB543700DD3D89 /* CardSearchViewController.swift */,
 				77F0BACE20F8C4930001DC57 /* CardDetailViewController.swift */,
+				775DE2D0210867200044A481 /* SettingsViewController.swift */,
+				775DE2D2210867930044A481 /* MerchantsViewController.swift */,
+				775DE2D4210867E70044A481 /* SuggestionsViewController.swift */,
+				775DE2D62108714B0044A481 /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,10 +293,14 @@
 				77ABAC1620D9C59400BF812A /* CardTableViewCell.swift in Sources */,
 				77DE259220F68ED100580028 /* Client.swift in Sources */,
 				77F0BACD20F8C0B30001DC57 /* ResultCell.swift in Sources */,
+				775DE2D1210867200044A481 /* SettingsViewController.swift in Sources */,
 				77672DF420F570D800BF642D /* Card.swift in Sources */,
+				775DE2D3210867930044A481 /* MerchantsViewController.swift in Sources */,
 				77F0BACF20F8C4930001DC57 /* CardDetailViewController.swift in Sources */,
 				77ABABFF20D9C0B400BF812A /* AppDelegate.swift in Sources */,
+				775DE2D5210867E70044A481 /* SuggestionsViewController.swift in Sources */,
 				779C300B20DB29DA00DD3D89 /* CardSnapViewController.swift in Sources */,
+				775DE2D72108714B0044A481 /* TabBarViewController.swift in Sources */,
 				77ABAC1420D9C26E00BF812A /* WalletViewController.swift in Sources */,
 				779C300D20DB543700DD3D89 /* CardSearchViewController.swift in Sources */,
 			);

@@ -15,6 +15,12 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     var fetchedCards: [Card?] = []
     var numCards = 0
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        tabBarItem = UITabBarItem(title: "Wallet", image: #imageLiteral(resourceName: "wallet icon"), tag: 1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
